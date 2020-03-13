@@ -15,3 +15,7 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use("Route");
+
+Route.resource("locations", "LocationController")
+  .apiOnly()
+  .validator(new Map([[["locations.store"], ["LocationValidator"]]]));
