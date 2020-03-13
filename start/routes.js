@@ -18,4 +18,9 @@ const Route = use("Route");
 
 Route.resource("locations", "LocationController")
   .apiOnly()
-  .validator(new Map([[["locations.store"], ["LocationValidator"]]]));
+  .validator(
+    new Map([
+      ["locations.store", "LocationValidatorInsert"],
+      ["locations.update", "LocationValidatorUpdate"]
+    ])
+  );

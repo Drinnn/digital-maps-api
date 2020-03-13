@@ -2,7 +2,7 @@
 
 const { rule } = use("Validator");
 
-class LocationValidator {
+class LocationValidatorInsert {
   get rules() {
     return {
       name: "required",
@@ -34,4 +34,4 @@ class LocationValidator {
   }
 }
 
-module.exports = LocationValidator;
+module.exports = LocationValidatorInsert;
