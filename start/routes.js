@@ -24,3 +24,7 @@ Route.resource("locations", "LocationController")
       ["locations.update", "LocationValidatorUpdate"]
     ])
   );
+
+Route.post("locations/check", "LocationController.check").validator(
+  "LocationValidatorCheck"
+);
