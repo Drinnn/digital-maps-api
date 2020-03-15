@@ -16,7 +16,7 @@ class LocationValidatorCheck {
 
   get messages() {
     return {
-      "hours.regex": "Enter the closing time in the following format: HH:mm.",
+      "hours.regex": "Enter hours in the following format: HH:mm.",
       "mts.integer": "Meters must be an integer value",
       "x.integer": "X coordinate must be an integer value.",
       "y.integer": "Y coordinate must be an integer value."

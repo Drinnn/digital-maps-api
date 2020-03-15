@@ -5,6 +5,7 @@ const { rule } = use("Validator");
 class LocationValidatorUpdate {
   get rules() {
     return {
+      name: "string",
       opening_time: [
         rule("regex", new RegExp("^([0-1][0-9]|[2][0-3]):([0-5][0-9])$"))
       ],
@@ -18,6 +19,7 @@ class LocationValidatorUpdate {
 
   get messages() {
     return {
+      "name.string": "Location name must be a string value.",
       "opening_time.regex":
         "Enter the opening time in the following format: HH:mm.",
       "closing_time.regex":

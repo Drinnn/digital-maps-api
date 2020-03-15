@@ -45,7 +45,7 @@ class LocationAppService {
       const req = request.all();
 
       return response
-        .status(200)
+        .status(201)
         .send(await this.locationRepository.create(Location, ...[req]));
     } catch (error) {
       return response.status(500).send(JSON.parse(`{ "error": "${error}"}`));
