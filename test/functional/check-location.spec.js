@@ -158,3 +158,103 @@ test("cannot check locations if y is not integer", async ({
     }
   ]);
 });
+
+test("cannot check locations if hours is not provided", async ({
+  assert,
+  client
+}) => {
+  const data = {
+    mts: 10,
+    x: 20,
+    y: 10
+  };
+
+  const response = await client
+    .post(`locations/check`)
+    .send(data)
+    .end();
+
+  response.assertStatus(400);
+  response.assertJSONSubset([
+    {
+      message: "Parameter hours is required.",
+      field: "hours",
+      validation: "required"
+    }
+  ]);
+});
+
+test("cannot check locations if mts is not provided", async ({
+  assert,
+  client
+}) => {
+  const data = {
+    x: 20,
+    y: 10,
+    hours: "19:00"
+  };
+
+  const response = await client
+    .post(`locations/check`)
+    .send(data)
+    .end();
+
+  response.assertStatus(400);
+  response.assertJSONSubset([
+    {
+      message: "Parameter mts is required.",
+      field: "mts",
+      validation: "required"
+    }
+  ]);
+});
+
+test("cannot check locations if x is not provided", async ({
+  assert,
+  client
+}) => {
+  const data = {
+    mts: 10,
+    y: 10,
+    hours: "19:00"
+  };
+
+  const response = await client
+    .post(`locations/check`)
+    .send(data)
+    .end();
+
+  response.assertStatus(400);
+  response.assertJSONSubset([
+    {
+      message: "Parameter x is required.",
+      field: "x",
+      validation: "required"
+    }
+  ]);
+});
+
+test("cannot check locations if y is not provided", async ({
+  assert,
+  client
+}) => {
+  const data = {
+    mts: 10,
+    x: 20,
+    hours: "19:00"
+  };
+
+  const response = await client
+    .post(`locations/check`)
+    .send(data)
+    .end();
+
+  response.assertStatus(400);
+  response.assertJSONSubset([
+    {
+      message: "Parameter y is required.",
+      field: "y",
+      validation: "required"
+    }
+  ]);
+});
