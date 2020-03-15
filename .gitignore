@@ -11,3 +11,5 @@ tmp
 database/*.sqlite
 
 .vscode
+
+.env.testing
