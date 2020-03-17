@@ -18,7 +18,7 @@ Esse projeto é uma API construída em Node.JS utilizando o framework Adonis. Re
 `
 - Ah, vale lembrar também que o projeto foi feito e testado utilizando MySQL. Então recomendo usarem o mesmo para testar.
 - Rode `adonis migration:run`.
-- Pronto :)
+- Pronto, agora rode com `adonis serve` :)
 
 ## API Reference
 
