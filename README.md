@@ -38,7 +38,7 @@ Esse projeto é uma API construída em Node.JS utilizando o framework Adonis. Re
     "coord_y": integer -> opcional
 `
 
-###### /locations/id -> PUT
+###### /locations/:id -> PUT
 - Edita a location existente baseada nos dados fornecidos.
 `
     "name": string -> obrigatório,
@@ -48,7 +48,7 @@ Esse projeto é uma API construída em Node.JS utilizando o framework Adonis. Re
     "coord_y": integer -> opcional
 `
 
-###### /locations/id -> DELETE
+###### /locations/:id -> DELETE
 - Delete a location existente.
 
 ###### /locations/check -> POST
